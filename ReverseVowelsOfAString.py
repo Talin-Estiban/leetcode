@@ -23,3 +23,43 @@ def reverseVowels(self, s):
                 result[n]=s[vowels[index]]
                 index+=1
         return "".join(result)
+
+# two pointers - time limit exceded
+
+       Vowels=["a","A","E","e","I","i","O","o","U","u"]
+        sList = [n for n in s] # turn s into a list 
+        n=len(sList)-1 # pointer from the end
+        m=0 # pointer from the start of the list 
+        while m<n:
+            for i in range(m,n):
+                if sList[i] in Vowels: #search for a vowel at the start of the list 
+                    m+=1 #increment start index
+                    for j in range(n,0,-1):
+                        if sList[j] in Vowels:#search for a vowel at the end of the list 
+                            n-=1 #increment end index
+                            sList[i],sList[j]=sList[j],sList[i] #swap vowels 
+                            break
+        
+        return "".join(sList)
+
+# two pointers success 
+
+def reverseVowels(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        Vowels=["a","A","E","e","I","i","O","o","U","u"]
+        sList = [n for n in s] # turn s into a list 
+        n=len(sList)-1
+        m=0
+        while m<n:
+            while m<n and sList[m] not in Vowels: # running from the start 
+                m+=1
+            while m<n and sList[n] not in Vowels:# running from the end
+                n-=1
+            sList[m],sList[n]=sList[n],sList[m] #swap vowels
+            #increment indexes
+            m+=1
+            n-=1
+        return "".join(sList)
