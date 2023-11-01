@@ -1,4 +1,17 @@
 # merge strings alternately
+"""
+You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.
+
+Strategy:
+first intuition:
+- find the difference between the two lengths of the strings.
+ 	- if it's zero then the two words have the same lngth then just merge them based on the length.
+	- else one of the two strings is longer and after merging based on the shorter string add what's left from the larger one. 
+
+second approach:
+- figure out which word is longe--> our index.
+- merge the two strings by using the index, while the iteration count is smaller than the index merge the next letter of the word if the iteration is smaller than it's length.
+"""
 
  # my first intuition- 30ms runtime
 def mergeAlternately(self, word1, word2):
