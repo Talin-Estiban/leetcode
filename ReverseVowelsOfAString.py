@@ -1,4 +1,17 @@
 #Reverse Vowels of  a String
+"""
+Given a string s, reverse only all the vowels in the string and return it.
+The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.
+
+Strategy:
+first intuition:
+- iterate through the list and extract all vowels into a new list called vowels.
+- reverse the extracted vowels.
+- create a new list with the whole string and reversed vowels.
+
+two pointers solution:
+- convert the string into a list.
+- iterate the list from the start and end and reverse vowels accordingly.
 
 # first intuition- time limit exceded passes 479/480 cases
 
